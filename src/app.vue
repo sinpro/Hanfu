@@ -25,8 +25,8 @@ export default {
 		// if(process.env.NODE_ENV==='development'){
 		// 	window.app=this;
 		// }
-		console.log(process.env.NODE_ENV,'process.env.NODE_ENV')
-		console.log(ENV_CONFIG,'ENV_CONFIG')
+		// console.log(process.env.NODE_ENV,'process.env.NODE_ENV')
+		// console.log(ENV_CONFIG,'ENV_CONFIG')
 	},
 }	
 </script>

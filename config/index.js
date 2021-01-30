@@ -4,6 +4,8 @@ let {
 let devServer = require('./dev'); // 开发环境配置 项目开发中不提交，每个开发者的习惯可能不一样
 // const rootValue = 37.5;
 const env = process.argv[process.argv.length - 1];
+
+console.log('lllllll' + env)
 const postcssPxtoViewport = require('postcss-px-to-viewport');
 module.exports = {
   assets: 'assets', // 打包后静态资源子目录
