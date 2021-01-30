@@ -24,8 +24,8 @@ const {
 	publicPath
 } = require('../config');
 
-// let entrys = utils.getMultiEntry('./src/templates/*.ejs');
-let entrys = utils.getMultiEntry('./src/templates/prd.ejs');
+let entrys = utils.getMultiEntry('./src/templates/*.ejs');
+// let entrys = utils.getMultiEntry('./src/templates/prd.ejs');
 let htmlPlugins = {
 	plugins: []
 };
@@ -184,13 +184,11 @@ module.exports = merge(baseConfig, htmlPlugins, bundleAnalyzerPlugin, {
 		new CleanWebpackPlugin({
 			cleanOnceBeforeBuildPatterns: [path.resolve(__dirname, '../dist/dist-prod')]
 		}),
-		new CopyWebpackPlugin([
-			{
-				from:path.resolve(__dirname,'../public/assets/'),
-				to:'assets',
-				ignore:['.*']
-			}
-		]),
+		new CopyWebpackPlugin([{
+			from: path.resolve(__dirname, '../public/assets/'),
+			to: 'assets',
+			ignore: ['.*']
+		}]),
 		new vueLoaderPlugin(),
 		// 生产版本
 		new webpack.DefinePlugin({

@@ -24,8 +24,8 @@ const {
 	publicPath
 } = require('../config');
 
-// let entrys = utils.getMultiEntry('./src/templates/*.ejs');
-let entrys = utils.getMultiEntry('./src/templates/uat.ejs');
+let entrys = utils.getMultiEntry('./src/templates/*.ejs');
+// let entrys = utils.getMultiEntry('./src/templates/uat.ejs');
 let htmlPlugins = {
 	plugins: []
 };
@@ -50,7 +50,7 @@ for (let key in entrys) {
 	}));
 }
 
-process.env.NODE_ENV = 'production';
+process.env.NODE_ENV = 'uat';
 process.noDeprecation = true;
 
 module.exports = merge(baseConfig, htmlPlugins, bundleAnalyzerPlugin, {
@@ -193,7 +193,7 @@ module.exports = merge(baseConfig, htmlPlugins, bundleAnalyzerPlugin, {
 		// 生产版本
 		new webpack.DefinePlugin({
 			'process.mock': JSON.stringify('mock'),
-			'process.env.NODE_ENV': JSON.stringify('production'),
+			'process.env.NODE_ENV': JSON.stringify('fat'),
 			// 'process.env.IS_TRACK': JSON.stringify('open'),
 		}),
 		new MiniCssExtractPlugin({

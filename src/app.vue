@@ -21,12 +21,11 @@ export default {
 		}
 	},
 	mounted(){
-		console.log()
 		// if(process.env.NODE_ENV==='development'){
 		// 	window.app=this;
 		// }
 		console.log(process.env.NODE_ENV,'process.env.NODE_ENV')
-		console.log(ENV_CONFIG,'ENV_CONFIG')
+		console.log(systemCONFIG,'systemCONFIG')
 	},
 }	
 </script>
