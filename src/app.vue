@@ -21,12 +21,16 @@ export default {
 		}
 	},
 	mounted(){
-		console.log()
 		// if(process.env.NODE_ENV==='development'){
 		// 	window.app=this;
 		// }
+<<<<<<< HEAD
 		// console.log(process.env.NODE_ENV,'process.env.NODE_ENV')
 		// console.log(ENV_CONFIG,'ENV_CONFIG')
+=======
+		console.log(process.env.NODE_ENV,'process.env.NODE_ENV')
+		console.log(systemCONFIG,'systemCONFIG')
+>>>>>>> 3551c326535700e48a21f61e309146a16bc00906
 	},
 }	
 </script>

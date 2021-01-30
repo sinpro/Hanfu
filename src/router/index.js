@@ -15,9 +15,18 @@ const router = new Router({
 // console.log(store, 'loginstuts:state =>state.app.loginstuts')
 router.beforeEach((to, from, next) => {
 	if (store._modules.root.state.app.loginstuts == 1) {
-		router.push('home')
+		console.log(router)
+		next({
+			path: '/home', // 将跳转的路由path作为参数，登录成功后跳转到该路由
+			query: { redirect: '11' }
+		})
 	} else {
-		router.push('login')
+
+		next({
+			path: '/login', // 将跳转的路由path作为参数，登录成功后跳转到该路由
+			query: { redirect: '11' }
+		})
+
 	}
 
 	console.log(to, from, next)

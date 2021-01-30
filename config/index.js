@@ -2,6 +2,7 @@ let {
   resolve
 } = require('path');
 let devServer = require('./dev'); // 开发环境配置 项目开发中不提交，每个开发者的习惯可能不一样
+const systemConfig = require('./systemConfig');
 // const rootValue = 37.5;
 const env = process.argv[process.argv.length - 1];
 
@@ -20,6 +21,7 @@ module.exports = {
   devServer: devServer,
   bundleAnalyzer: false,
   // rootValue           : rootValue,
+  systemConfig: systemConfig,
   imagesPublicPath: '../../',
   postcssLoaderOptions: {
     loader: 'postcss-loader',
