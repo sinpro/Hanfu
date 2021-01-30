@@ -25,13 +25,13 @@ const {
 } = require('../config');
 
 // let entrys = utils.getMultiEntry('./src/templates/*.ejs');
-let entrys = utils.getMultiEntry('./src/templates/fat.ejs');
+let entrys = utils.getMultiEntry('./src/templates/uat.ejs');
 let htmlPlugins = {
 	plugins: []
 };
 let bundleAnalyzerPlugin = {
 	// plugins: process.env.npm_config_report ? [new BundleAnalyzerPlugin()] : []
-	plugins:[new BundleAnalyzerPlugin()] //分析js占比的弹出
+	plugins: [new BundleAnalyzerPlugin()] //分析js占比的弹出
 };
 for (let key in entrys) {
 	htmlPlugins.plugins.push(new HtmlWebpackPlugin({
@@ -184,13 +184,11 @@ module.exports = merge(baseConfig, htmlPlugins, bundleAnalyzerPlugin, {
 		new CleanWebpackPlugin({
 			cleanOnceBeforeBuildPatterns: [path.resolve(__dirname, '../dist/dist-fat')]
 		}),
-		new CopyWebpackPlugin([
-			{
-				from:path.resolve(__dirname,'../public/assets/'),
-				to:'assets',
-				ignore:['.*']
-			}
-		]),
+		new CopyWebpackPlugin([{
+			from: path.resolve(__dirname, '../public/assets/'),
+			to: 'assets',
+			ignore: ['.*']
+		}]),
 		new vueLoaderPlugin(),
 		// 生产版本
 		new webpack.DefinePlugin({
